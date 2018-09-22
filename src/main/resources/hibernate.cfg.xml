@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">
+			<!-- org.hibernate.dialect.MySQLDialect -->
+			org.hibernate.dialect.PostgreSQLDialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			<!-- com.mysql.jdbc.Driver -->
+			org.postgresql.Driver
+		</property>
+
+		<!-- Assume test is the database name -->
+		<property name="hibernate.connection.url">
+			<!-- jdbc:mysql://db4free.net:3306/ispw2017 -->
+			jdbc:postgresql://localhost:5432/postgres
+		</property>
+		<property name="hibernate.connection.username">
+			<!-- ispw2017ubuy -->
+			postgres
+		</property>
+		<property name="hibernate.connection.password">
+			<!-- CicchittoCordaroMarchesi -->
+			password
+		</property>
+		<property name="hibernate.hbm2ddl.auto">
+			update
+		</property>
+		<!-- <property name="current_session_context_class">thread</property> -->
+		<!-- Enable debug information -->
+		<property name="show_sql">
+			true
+		</property>
+		<!-- <property name="hibernate.enable_lazy_load_no_trans">true</property> -->
+		<!-- List of XML mapping files -->
+		<mapping class="dominio.Venditore"/>
+		<mapping class="dominio.Prodotto"/>
+		<mapping class="dominio.Valutazione"/>
+		<!-- <mapping resource="Prodotto.hbm.xml" /> -->
+
+	</session-factory>
+</hibernate-configuration>
